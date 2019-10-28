@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void dog() {
+void 
+dog() 
+{
 	int i;
 	printf("1. Husky\n");
 	printf("2. Pitbull\n");
@@ -19,8 +21,8 @@ void dog() {
 	}
 	int y;
 	printf("Would you like to exit or restart?\n");
-	printf("1. Yes\n");
-	printf("2. No\n");
+	printf("1. Restart\n");
+	printf("2. Exit\n");
 	printf("Selection: ");
 	scanf("%d",&y);
 	switch (y) {
@@ -35,7 +37,9 @@ void dog() {
 			printf("invalid input\n");
 	}
 }
-void cat() {
+void 
+cat() 
+{
 	int i;
 	printf("1. Siamese\n");
 	printf("2. Bombay\n");
@@ -51,13 +55,29 @@ void cat() {
 	if (i==3) {
 		printf("you have picked the Dwelf\n");
 	}
-	else {
-		printf("incorrect value, exiting\n");
-		exit(0);
+	int y;
+	printf("Would you like to exit or restart?\n");
+	printf("1. Restart\n");
+	printf("2. Exit\n");
+	printf("Selection: ");
+	scanf("%d",&y);
+	switch (y) {
+		case 1:
+			return;
+			break;
+		case 2:
+			printf("Thank your for playing!\n");
+			exit(0);
+			break;
+		default:
+			printf("invalid input\n");
 	}
+
 }
 
-void hamster() {
+void 
+hamster() 
+{
 	int i;
 	printf("1. Dwarf\n");
 	printf("2. Robo\n");
@@ -73,43 +93,54 @@ void hamster() {
 	if (i==3) {
 		printf("you have picked the Chinese\n");
 	}
-	else {
-		printf("incorrect value, exiting\n");
-		exit(0);
-	}
-}
-void panda(){
-	printf("you have chose pandas\n");
-}
-
-int main(int argc, const char *argv[]) {
-	int i;
-	printf("Please Select an animal\n");
-	printf("1. Dog\n");
-	printf("2. Cat\n");
-	printf("3. Hamster\n");
-	printf("4. Panda\n");
-	printf("5. Exit\n");
+	int y;
+	printf("Would you like to exit or restart?\n");
+	printf("1. Restart\n");
+	printf("2. Exit\n");
 	printf("Selection: ");
-	scanf("%d", &i);
-	switch (i) {
+	scanf("%d",&y);
+	switch (y) {
 		case 1:
-			dog();
+			return;
 			break;
 		case 2:
-			cat();
-			break;
-		case 3:
-			hamster();
-			break;
-		case 4:
-			panda();
-			break;
-		case 5:
-			printf("Thanks for playing!\n");
+			printf("Thank your for playing!\n");
+			exit(0);
 			break;
 		default:
-			printf("wrong input, exiting\n");
+			printf("invalid input\n");
+	}
+}
+
+int 
+main(int argc, const char *argv[]) 
+{
+	while(argc = 1){
+		int i;
+		printf("Please Select an animal\n");
+		printf("1. Dog\n");
+		printf("2. Cat\n");
+		printf("3. Hamster\n");
+		printf("4. Exit\n");
+		printf("Selection: ");
+		scanf("%d", &i);
+		switch (i) {
+			case 1:
+				dog();
+				break;
+			case 2:
+				cat();
+				break;
+			case 3:
+				hamster();
+				break;
+			case 4:
+				printf("Thanks for playing!\n");
+				exit(0);
+				break;
+			default:
+				printf("wrong input, exiting\n");
+		}
 	}
 	return 0;
 }
